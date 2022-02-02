@@ -1,0 +1,100 @@
+﻿@using BookStore.Models
+@model List<AddToCart>
+@{
+    ViewBag.Title = "Index";
+}
+
+<main>
+    <!-- Hero Area Start-->
+    <div class="slider-area ">
+        <div class="single-slider slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Checkout</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--================Checkout Area =================-->
+    <section class="checkout_area section_padding">
+        <div class="container">
+            @{
+                int SubTotal = 0;
+                int Total = 0;
+                <div class="billing_details">
+                    <div class="row">
+
+                        <div class="col-lg-10" style="margin-left:50px">
+                            <div class="order_box">
+                                <h2>Your Order</h2>
+                                <ul class="list">
+                                    <li>
+                                        <a href="#">
+                                            Product
+                                            <span>Total</span>
+                                        </a>
+                                    </li>
+                                    @foreach (var item in Model)
+                                    {
+                                        int Total_Price = (int)item.Total_Price;
+                                        <li>
+                                            <a href="#">
+                                                @item.Book.Title
+                                                <span class="middle">x @item.Count</span>
+                                                <span class="last">@Total_Price</span>
+                                            </a>
+
+                                        </li>
+                                        SubTotal += Total_Price;
+                                    }
+                                </ul>
+                                <ul class="list list_2">
+                                    <li>
+                                        <a href="#">
+                                            Subtotal
+                                            <span>@SubTotal Egp </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Shipping
+                                            <span>Flat rate: 50 Egp</span>
+                                        </a>
+                                    </li>
+                                    @{
+                                        Total = SubTotal + 50;
+                                    }
+                                    <li>
+                                        <a href="#">
+                                            Total
+                                            <span>@Total Egp</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <label for="f-option3">Ship to </label>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <form action="/CheckOut/Confirmation/" method="post">
+                                    <div class="col-md-12 form-group p_star">
+                                        <input required type="text" class="form-control" id="Adress" name="Adress"
+                                               placeholder="Adress">
+                                    </div>
+                                    <button type="submit" class="btn_3">Proceed to Confirmation</button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+    <!--================End Checkout Area =================-->
+</main>
+

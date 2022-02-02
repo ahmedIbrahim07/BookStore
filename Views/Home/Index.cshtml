@@ -1,0 +1,222 @@
+﻿@using BookStore.Models
+@{
+    ViewBag.Title = "Home Page";
+}
+@model List<Book>
+<main>
+    @{
+        if (Session["CustomerID"] != null)
+        {
+        <h2  style="margin-top:120px;text-align:center">welcome @Session["userName"]</h2>
+        }
+        
+        }
+            
+            <!--? slider Area Start -->
+            <div class="slider-area " style="margin-right:150px;">
+                <div class="slider-active">
+                    <!-- Single Slider -->
+                    <div class="single-slider slider-height d-flex align-items-center slide-bg">
+                        <div class="container">
+                            <div class="row justify-content-between align-items-center">
+                                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+                                    <div class="hero__caption">
+                                        <h1 data-animation="fadeInLeft" data-delay=".4s" data-duration="2000ms">Select Your New Journy</h1>
+                                        <p data-animation="fadeInLeft" data-delay=".7s" data-duration="2000ms">
+                                            You’re in the right place. Tell us what titles or genres you’ve enjoyed in the past, and we’ll give you surprisingly insightful recommendations.
+
+                                        </p>
+                                        <!-- Hero-btn -->
+                                        <div class="hero__btn" data-animation="fadeInLeft" data-delay=".8s" data-duration="2000ms">
+                                            <a href="/Shop" class="btn hero-btn">Shop Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 d-none d-sm-block">
+                                    <div class="hero__img" data-animation="bounceIn" data-delay=".4s">
+                                        <img src="~/content/assets/img/gallery/alfons-morales-YLSwjSy7stw-unsplash.jpg" alt="" class=" heartbeat" style="height:500px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Slider -->
+
+                </div>
+            </div>
+            <!-- slider Area End-->
+            <!-- ? New Product Start -->
+            <section class="new-product-area section-padding30">
+                <div class="container">
+                    <!-- Section tittle -->
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="section-tittle mb-70">
+                                <h2>New Arrivals</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                            <div class="single-new-pro mb-30 text-center">
+                                <div class="product-img">
+                                    <img src="~/content/assets/img/Books/@ViewBag.newArivals[0].IMG" alt="" style="width:100%;height:450px">
+                                </div>
+                                <div class="product-caption">
+                                    <h3><a href="/Shop/ShopDetails/@ViewBag.newArivals[0].ISBN">@ViewBag.newArivals[0].Title</a></h3>
+                                    <span>@ViewBag.newArivals[0].Price Egp</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                            <div class="single-new-pro mb-30 text-center">
+                                <div class="product-img">
+                                    <img src="~/content/assets/img/Books/@ViewBag.newArivals[1].IMG" alt="" style="width:100%;height:600px">
+                                </div>
+                                <div class="product-caption">
+                                    <h3><a href="/Shop/ShopDetails/@ViewBag.newArivals[1].ISBN">@ViewBag.newArivals[1].Title</a></h3>
+                                    <span>@ViewBag.newArivals[1].Price Egp</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                            <div class="single-new-pro mb-30 text-center">
+                                <div class="product-img">
+                                    <img src="~/content/assets/img/Books/@ViewBag.newArivals[2].IMG" alt="" style="width:100%;height:450px">
+                                </div>
+                                <div class="product-caption">
+                                    <h3><a href="/Shop/ShopDetails/@ViewBag.newArivals[2].ISBN">@ViewBag.newArivals[2].Title</a></h3>
+                                    <span>@ViewBag.newArivals[2].Price Egp</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--  New Product End -->
+            <!--? Gallery Area Start -->
+            <div class="gallery-area">
+                <div class="container-fluid p-0 fix">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-4 col-md-6 col-sm-6">
+                            <div class="single-gallery mb-30">
+                                <div class="gallery-img big-img" style="background-image: url(~/../content/assets/img/gallery/annie-spratt-303944-unsplash.jpeg); "></div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                            <div class="single-gallery mb-30">
+                                <div class="gallery-img big-img" style="background-image: url(~/../content/assets/img/gallery/alfons-morales-YLSwjSy7stw-unsplash.jpg);"></div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-12">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-6 col-sm-6">
+                                    <div class="single-gallery mb-30">
+                                        <div class="gallery-img small-img" style="background-image: url(~/../content/assets/img/gallery/barnes-noble-booksellers-book-display-nyc-usa-T6X7HC.jpeg);"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-lg-12  col-md-6 col-sm-6">
+                                    <div class="single-gallery mb-30">
+                                        <div class="gallery-img small-img" style="background-image: url(~/../content/assets/img/gallery/images.jpeg);"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Gallery Area End -->
+            <!--? Popular Items Start -->
+            <div class="popular-items section-padding30">
+                <div class="container">
+                    <!-- Section tittle -->
+                    <div class="row justify-content-center">
+                        <div class="col-xl-7 col-lg-8 col-md-10">
+                            <div class="section-tittle mb-70 text-center">
+                                <h2>Popular Items</h2>
+                                <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @{ int count = 0;
+                            foreach (Book item in Model)
+                            {
+
+                                if (item.Stock > 0)
+                                {
+                                    count++;
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                                        <div class="single-popular-items mb-50 text-center">
+
+                                            <div class="popular-img">
+                                                <img src="~/content/assets/img/Books/@item.IMG" alt="" style="width:100%; height:500px">
+                                                <div class="img-cap">
+                                                    <a href="/Shop/ShopDetails/@item.ISBN"><span>Show detalis</span></a>
+                                                </div>
+
+                                            </div>
+                                            <div class="popular-caption">
+                                                <h3>@item.Title</h3>
+                                                <span> @item.Price EGP</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                if (count > 2)
+                                {
+                                    break;
+                                }
+                            }
+                        }
+                    </div>
+                    <!-- Button -->
+                    <div class="row justify-content-center">
+                        <div class="room-btn pt-70">
+                            <a href="/Shop" class="btn view-btn1">View More Products</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Popular Items End -->
+            <!--? Video Area Start -->
+            <div class="video-area mb-100" style="background-image: url(~/../content/assets/img/gallery/barnes-noble-booksellers-book-display-nyc-usa-T6X7HC.jpeg); ">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <div class="video-wrap">
+                                <div class="play-btn "><a class="popup-video" href="https://youtu.be/0ZnnO7F0hjw"><i class="fas fa-play"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Arrow -->
+
+                </div>
+            </div>
+            <!-- Video Area End -->
+            <!--? Watch Choice  Start-->
+            <div class="watch-area section-padding30">
+                <div class="container">
+                    <div class="row align-items-center justify-content-between padding-130">
+                        <div class="col-lg-5 col-md-6">
+                            <div class="watch-details mb-40">
+                                <h2>What will you discover?</h2>
+                                <p>Enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
+                                <a href="/Shop" class="btn">Show Books</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-10">
+                            <div class="choice-watch-img mb-40">
+                                <img src="~/content/assets/img/gallery/annie-spratt-303944-unsplash.jpeg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Watch Choice  End-->
+            <!--? Shop Method Start-->
+
+            <!-- Shop Method End-->
+        </main>

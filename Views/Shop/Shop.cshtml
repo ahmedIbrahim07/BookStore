@@ -1,0 +1,81 @@
+﻿@using BookStore.Models
+@model List<Book>
+@{
+    ViewBag.Title = "Shop";
+}
+<main>
+    <!-- Hero Area Start-->
+    <div class="slider-area ">
+        <div class="single-slider slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Book Shop</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero Area End-->
+    <!-- Latest Products Start -->
+    <section class="popular-items latest-padding">
+        <div class="container">
+            <div class="row product-btn justify-content-between mb-40">
+                <div class="properties__button">
+                    <!--Nav Button  -->
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">All Books</a>
+
+                        </div>
+                    </nav>
+                    <!--End Nav Button  -->
+                </div>
+                <!-- Grid and List view -->
+                <div class="grid-list-view">
+                </div>
+                <!-- Select items -->
+
+            </div>
+            <!-- Nav Card -->
+            <div class="tab-content" id="nav-tabContent">
+                <!-- card one -->
+
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class="row ">
+                        @foreach (Book item in Model)
+                        {
+                            int price = (int)item.Price;
+                            if (item.Stock > 0)
+                            {
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                                    <div class="single-popular-items mb-50 text-center">
+
+                                        <div class="popular-img">
+                                            <img src="~/content/assets/img/Books/@item.IMG" alt="" style="width:100%; height:500px">
+                                            <div class="img-cap">
+                                                <a href="/Shop/ShopDetails/@item.ISBN"><span>Show detalis</span></a>
+                                            </div>
+
+                                        </div>
+                                        <div class="popular-caption">
+                                            <h3>@item.Title</h3>
+                                            <span> @price Egp</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+
+                </div>
+                <!-- End Nav Card -->
+            </div>
+        </div>
+    </section>
+    <!-- Latest Products End -->
+    <!--? Shop Method Start-->
+    <!-- Shop Method End-->
+</main>

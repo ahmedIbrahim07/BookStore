@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "OpenRegister";
+}
+
+<h2 style="margin-top:150px">Register</h2>
+<div class="col-lg-6 col-md-6" style="margin-top:150px">
+
+    <form class="row contact_form" action="/LogIn/SaveRegister" method="post">
+        <div class="col-md-12 form-group p_star">
+            <input required type="text" class="form-control" id="name" name="Name"
+                   placeholder="Name">
+        </div>
+        <div class="col-md-12 form-group p_star">
+            <input required type="email" class="form-control" id="Email" name="Email"
+                   placeholder="Email">
+        </div>
+        <div class="col-md-12 form-group p_star">
+            <input required type="password" class="form-control" id="password" name="Password"
+                   placeholder="Password">
+        </div>
+        <div class="col-md-12 form-group p_star">
+            <input required type="password" class="form-control" id="ConformPassword" name="ConfirmPassword"
+                   placeholder="ConformPassword">
+        </div>
+
+        <div class="col-md-12 form-group p_star">
+            <input required type="text" class="form-control" id="Phone" name="Phone"
+                   placeholder="Phone">
+        </div>
+        <div class="col-md-12 form-group p_star">
+            <input required type="text" class="form-control" id="Adress" name="Adress"
+                   placeholder="Adress">
+        </div>
+        <div class="col-md-12 form-group">
+
+            <button type="submit" value="submit" class="btn_3">
+                Sign UP
+            </button>
+
+        </div>
+    </form>
+    <script>
+        var password = document.getElementById("password")
+            , confirm_password = document.getElementById("ConformPassword");
+
+        function validatePassword() {
+            if (password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Passwords Don't Match");
+            } else {
+                confirm_password.setCustomValidity('');
+            }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+    </script>
+</div>
+

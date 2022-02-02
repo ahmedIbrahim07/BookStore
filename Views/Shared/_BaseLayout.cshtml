@@ -1,0 +1,249 @@
+﻿<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Book shop | eCommers</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="~/content/assets/img/favicon.ico">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js%22%3E"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="~/content/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/content/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/content/assets/css/flaticon.css">
+    <link rel="stylesheet" href="~/content/assets/css/slicknav.css">
+    <link rel="stylesheet" href="~/content/assets/css/animate.min.css">
+    <link rel="stylesheet" href="~/content/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/content/assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="~/content/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="~/content/assets/css/slick.css">
+    <link rel="stylesheet" href="~/content/assets/css/nice-select.css">
+    <link rel="stylesheet" href="~/content/assets/css/style.css">
+    <link rel="stylesheet" href="~/content/assets/css/StyleSheet1.css" />
+    <style>
+        .links ul li {
+            margin-left: 100px;
+        }
+
+        .header {
+            overflow: hidden;
+            background-color: #F0C6BE;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            opacity: 5;
+        }
+
+        
+    </style>
+   
+
+
+</head>
+
+<body>
+    
+    <header>
+
+        
+        <nav class="main-header navbar navbar-expand-lg n header" style="border-bottom-right-radius: 20px; border-bottom-left-radius: 20px">
+            <a class="navbar-brand" href="/Home" data-abc="true"><h1>Book <span style="color:red">Shop</span></h1></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation" style="background-color:firebrick">
+                <span class="fas fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse links" id="navbarColor02">
+                <ul class="navbar-nav mr-auto ">
+                    <li class="nav-item active"> <a class="nav-link " href="/Home" data-abc="true" style="color: black; font-size: x-large ">Home <span class="sr-only">(current)</span></a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="/Shop" data-abc="true" style="color:black; font-size:x-large ">Shop</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="/About" data-abc="true" style="color: black; font-size: x-large ">About</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="/Contact" data-abc="true" style="color: black; font-size: x-large ">Contact</a> </li>
+
+                    @{
+                        if (Session["CustomerID"] == null)
+                        {
+                            <li >
+                                <form action="/SearchResult" method="post" class="form-inline ">
+                                    <button class="btn btn-secondary " style="height: 0px; width: 50px; margin-right: 5px; border-radius: 20px" type="submit"><i class="fas fa-search"></i></button>
+                                    <input class="form-control mr-sm-2" name="searchName" type="text" placeholder="Search" style="height:50px; width:300px;border-radius:20px">
+
+                                </form>
+                            </li>
+                            <li> <a href="/LogIn" style="color:black;font-size:x-large "><span class="flaticon-user"></span></a></li>
+                        }
+                        else
+                        {
+                            <li>
+                                <form action="/SearchResult" method="post" class="form-inline ">
+                                    <button class="btn btn-secondary " style="height: 0px; width: 50px;  border-radius: 20px" type="submit"><i class="fas fa-search"></i></button>
+                                    <input class="form-control " name="searchName" type="text" placeholder="Search" style="height:50px; width:200px;border-radius:20px">
+
+                                </form>
+                            </li>
+                            <li> <a href="/Home/Orders" style="color:black;font-size:x-large "><span class="fas fa-truck"></span></a></li>
+                            <li><a href="/LogIN/LogOut" style="color: black; font-size:x-large "><span class="fas fa-sign-out-alt"></span></a></li>
+
+                        }
+                    }
+                    <li><a href="/Cart" style="color: black; font-size: x-large"><span class="flaticon-shopping-cart"></span></a> </li>
+                    <li> </li>
+                </ul>
+                
+            </div>
+            
+        </nav>
+        <!-- Header End -->
+    </header>
+    <div >
+        
+        @RenderBody()
+    </div>
+    
+    <footer>
+        <!-- Footer Start-->
+        <div class="footer-area footer-padding">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-xl-3 col-lg-3 col-md-5 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="single-footer-caption mb-30">
+                                <!-- logo -->
+                                <div class="footer-logo">
+                                    <a class="navbar-brand" href="/Home" data-abc="true"><h1>Book <span style="color:red">Shop</span></h1></a>
+                                </div>
+                                <div class="footer-tittle">
+                                    <div class="footer-pera">
+                                        <p>
+                                            You’re in the right place. Tell us what titles or genres you’ve enjoyed in the past, and we’ll give you surprisingly insightful recommendations.
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Quick Links</h4>
+                                <ul>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#"> Offers & Discounts</a></li>
+                                    <li><a href="#"> Get Coupon</a></li>
+                                    <li><a href="/Contact">  Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>New Products</h4>
+                                <ul>
+                                    <li><a href="#">novels</a></li>
+                                    <li><a href="#">Poetry</a></li>
+                                    <li><a href="#"> Fairy-tale</a></li>
+                                    <li><a href="#"> allegory</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-5 col-sm-7">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Support</h4>
+                                <ul>
+                                    <li><a href="#">Frequently Asked Questions</a></li>
+                                    <li><a href="#">Terms & Conditions</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Report a Payment Issue</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer bottom -->
+                <div class="row align-items-center">
+                    <div class="col-xl-7 col-lg-8 col-md-7">
+                        <div class="footer-copy-right">
+                            <p>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="#" >MyTeam</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-4 col-md-5">
+                        <div class="footer-copy-right f-right">
+                            <!-- social -->
+                            <div class="footer-social">
+                                <a href="https://twitter.com/A7medIbrahiiim"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.facebook.com/profile.php?id=100027094544482"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-behance"></i></a>
+                                <a href="#"><i class="fas fa-globe"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End-->
+    </footer>
+    <!--? Search model Begin -->
+    <div class="search-model-box">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-btn">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Searching key.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search model end -->
+    <!-- JS here -->
+
+    <script src="~/content/~/content/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="~/content/~/content/assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="~/content/~/content/assets/js/popper.min.js"></script>
+    <script src="~/content/~/content/assets/js/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="~/content/~/content/assets/js/jquery.slicknav.min.js"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="~/content/~/content/assets/js/owl.carousel.min.js"></script>
+    <script src="~/content/~/content/assets/js/slick.min.js"></script>
+
+    <!-- One Page, Animated-HeadLin -->
+    <script src="~/content/~/content/assets/js/wow.min.js"></script>
+    <script src="~/content/~/content/assets/js/animated.headline.js"></script>
+    <script src="~/content/~/content/assets/js/jquery.magnific-popup.js"></script>
+
+    <!-- Scrollup, nice-select, sticky -->
+    <script src="~/content/~/content/assets/js/jquery.scrollUp.min.js"></script>
+    <script src="~/content/~/content/assets/js/jquery.nice-select.min.js"></script>
+    <script src="~/content/~/content/assets/js/jquery.sticky.js"></script>
+
+    <!-- contact js -->
+    <script src="~/content/~/content/assets/js/contact.js"></script>
+    <script src="~/content/~/content/assets/js/jquery.form.js"></script>
+    <script src="~/content/~/content/assets/js/jquery.validate.min.js"></script>
+    <script src="~/content/~/content/assets/js/mail-script.js"></script>
+    <script src="~/content/~/content/assets/js/jquery.ajaxchimp.min.js"></script>
+
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="~/content/~/content/assets/js/plugins.js"></script>
+    <script src="~/content/~/content/assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+﻿@using BookStore.Models
+@model Book
+@{
+    ViewBag.Title = "details";
+}
+
+<main>
+    <!-- Hero Area Start-->
+    <div class="slider-area ">
+        <div class="single-slider slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Watch Shop</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero Area End-->
+    <!--================Single Product Area =================-->
+    <div class="product_image_area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5 ">
+
+                    <div class="single_product_img">
+                        <img src="~/Content/assets/img/Books/@Model.IMG" alt="#" style="width:100%">
+                    </div>
+
+                </div>
+                @{
+                    int price = (int)Model.Price;
+                }
+                <div class="col-lg-8">
+                    <div class="single_product_text text-center">
+                        <h3>
+                            @Model.Title  <span style="font-size:22px;font-weight:bold; color:black">( @Model.Version) </span><br />
+
+                            <span style="color: black; font-size: 25px; font-weight: bold;">published by: </span>  <span style="color: black; font-size: 25px;"> @Model.Publisher.Name</span><br />
+                            <span style="color: black; font-size: 25px; font-weight: bold;">written by:</span><span style="color: black; font-size: 25px;"> @Model.Author </span><br />
+                            <span style="color: black; font-size: 25px; font-weight: bold;">language:</span>  <span style="color: black; font-size: 25px;"> @Model.Lang </span><br />
+                            <span style="color: black; font-size: 25px; font-weight: bold;">Release Date: </span> <span style="color: black; font-size: 25px;"> @Model.Year </span><br />
+                            <span style="color: black; font-size: 25px; font-weight: bold;">Price:</span>  <span span style="color: black; font-size: 35px;"> @price Egp</span>
+
+
+                        </h3>
+                        <p>
+                            <span style="color: #785750"> @Model.Coclusion </span>
+                        </p>
+                        <div class="card_area">
+                            <div class="product_count_area">
+
+                                <form action="/Shop/addToCart/@Model.ISBN" method="post">
+                                    <div class="product_count d-inline-block">
+                                        <input type="number" value="1" id="quantity" name="Count" min="1" max="@Model.Stock" style="background-color: #E6E6FA;color:black;width:150px;height:50px">
+                                    </div>
+
+
+                                    <input type="submit" name="Amount" value=" add to cart" class="btn btn4" />
+
+
+                                </form>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--================End Single Product Area =================-->
+    <!-- subscribe part here -->
+    <section class="subscribe_part section_padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="subscribe_part_content">
+                        <h2>Get promotions & updates!</h2>
+                        <p>Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources credibly innovate granular internal .</p>
+                        <div class="subscribe_form">
+                            <input type="email" placeholder="Enter your mail">
+                            <a href="#" class="btn_1">Subscribe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- subscribe part end -->
+</main>
+
